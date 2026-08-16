@@ -1,0 +1,61 @@
+End-to-End Ophthalmic Provenance Benchmark Protocol
+Version: 0.1
+
+This protocol was finalized before inspection of end-to-end provenance latency results.
+
+Objective:
+Measure the in-memory computational latency required to transform a fundus image and its associated metadata into a cryptographically signed canonical provenance record.
+
+Dataset:
+All 747 HYGD v1.1.0 fundus images and associated metadata records.
+
+Algorithms:
+1. ECDSA P-256 with SHA-256
+2. Pure ML-DSA-65 without external pre-hashing
+
+End-to-end timed operation:
+1. Compute SHA-256 of the in-memory fundus image bytes.
+2. Hex-encode the SHA-256 digest.
+3. Construct the canonical ophthalmic provenance JSON using the predefined schema.
+4. Generate the digital signature over the canonical provenance bytes.
+
+Excluded from timed latency:
+- Disk I/O
+- Input-file parsing
+- Output-file writing
+- Key generation
+- Caller-managed buffer allocation
+
+Input handling:
+All images and metadata will be loaded into memory before timing begins.
+
+Canonicalization:
+The generated provenance bytes must exactly match the previously frozen canonical provenance records before formal benchmarking begins.
+
+Benchmark design:
+- Three non-analyzed warm-up passes
+- Thirty formal experimental blocks
+- All 747 records per algorithm per block
+- Fresh key pair for each algorithm in each block
+- Balanced algorithm order: ECDSA first in 15 blocks and ML-DSA-65 first in 15 blocks
+- Fixed schedule randomization seed: 20260815
+- Same record order for both algorithms within each block
+
+Timing:
+A monotonic high-resolution system clock will be used.
+
+Recorded record-level endpoints:
+- Image hashing latency
+- Provenance construction latency
+- Signing latency within the end-to-end pipeline
+- Total end-to-end latency
+- Signature size
+- Signing success/failure
+
+Primary end-to-end summary:
+The 30 block-level median total end-to-end latencies will be summarized using median, interquartile range, and 95% bootstrap confidence interval.
+
+Paired comparison:
+ML-DSA-65 / ECDSA block-level median end-to-end latency ratios will be summarized using median, interquartile range, and 95% bootstrap confidence interval.
+
+No formal observations will be excluded unless a technical exclusion is documented.

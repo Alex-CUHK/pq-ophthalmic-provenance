@@ -1,0 +1,51 @@
+Study:
+Post-Quantum Provenance for Ophthalmic Data — Conference Proof of Concept
+
+Protocol version:
+0.1
+
+Dataset:
+Hillel Yaffe Glaucoma Dataset (HYGD), version 1.1.0
+
+Dataset scope:
+All 747 fundus images and corresponding metadata records.
+
+Cryptographic schemes:
+1. ECDSA P-256 with SHA-256
+2. ML-DSA-65
+
+Primary endpoints:
+1. Signing latency
+2. Verification latency
+
+Secondary endpoints:
+1. Signature size
+2. Signing throughput
+3. Verification throughput
+4. Storage overhead
+5. End-to-end provenance processing latency
+
+Performance benchmark design:
+- 30 experimental blocks
+- All 747 provenance records evaluated in each block
+- Both algorithms evaluated on the same hardware
+- Algorithm order randomized between blocks
+- A fresh key pair generated for each experimental block
+- Key generation time analyzed separately from signing and verification latency
+
+Tampering experiments:
+1. Image-content modification
+2. Diagnostic-label modification
+3. Quality-score modification
+4. Record/image identifier modification
+
+Tampering scope:
+All 747 records will be evaluated under each predefined tampering scenario.
+
+Reporting:
+- Raw measurements will be retained
+- No failed experimental runs will be deleted without documented reason
+- Block-level results will be used for statistical comparison
+- Median and interquartile range will be reported
+- 95% confidence intervals will be calculated
+- Exact software and hardware versions will be recorded

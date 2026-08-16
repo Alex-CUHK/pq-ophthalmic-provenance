@@ -1,0 +1,59 @@
+Statistical Analysis Plan
+Version: 0.1
+
+This analysis plan was defined after completion of data quality control but before inspection of formal latency results.
+
+Primary analysis unit:
+Experimental block.
+
+Primary endpoints:
+1. Signing latency
+2. Verification latency
+
+For each of the 30 blocks and each cryptographic algorithm:
+- Median record-level latency will be calculated.
+- Interquartile range of record-level latency will be calculated.
+- Mean record-level latency will be calculated.
+
+Primary summary:
+For each algorithm, the distribution of the 30 block-level median latencies will be summarized using:
+- Median
+- Interquartile range
+- 95% bootstrap confidence interval for the median
+
+Primary comparative effect:
+For each block, the ratio of ML-DSA-65 block-level median latency to ECDSA P-256 block-level median latency will be calculated.
+
+The 30 paired block-level ratios will be summarized using:
+- Median ratio
+- Interquartile range
+- 95% bootstrap confidence interval
+
+Bootstrap:
+- 10,000 block-level bootstrap resamples
+- Fixed random seed: 20260815
+- Resampling will preserve the paired block structure
+
+Throughput:
+For each block and algorithm, cryptographic throughput will be estimated as:
+1e9 / mean record-level latency in nanoseconds.
+
+Signing and verification throughput will be summarized across the 30 blocks using median, interquartile range, and 95% bootstrap confidence intervals.
+
+Signature size:
+- ML-DSA-65 signature size will be summarized across all formal observations.
+- ECDSA DER-encoded signature sizes will be summarized using range, median, mean, and observed frequency distribution.
+- Storage projections will use the empirically observed mean signature size.
+
+Key generation:
+Key generation latency will be summarized using the 30 independent block-level key generations per algorithm:
+- Median
+- Interquartile range
+- 95% bootstrap confidence interval
+
+Order sensitivity:
+Block-level latency results will additionally be stratified by whether each algorithm was executed first or second in the block.
+
+Record-level observations will be retained for descriptive and sensitivity analyses but will not be treated as 22,410 statistically independent experimental replicates.
+
+No formal benchmark observations will be excluded unless a technical exclusion is documented.

@@ -1,0 +1,24 @@
+Formal Tampering Validation Deviation Note
+Version: 0.1
+Date: 2026-08-15
+
+The formal metadata tampering verifier was inadvertently executed twice using the same frozen source code, executable, input dataset, tampering cases, cryptographic algorithms, and software environment.
+
+The second execution used the same output file paths and therefore overwrote the raw CSV and console log from the first execution.
+
+Both executions produced identical aggregate validation outcomes:
+- ECDSA signing success: 747/747
+- ECDSA original verification: 747/747 PASS
+- ECDSA label tampering detection: 747/747
+- ECDSA quality-score tampering detection: 747/747
+- ECDSA identifier tampering detection: 747/747
+- ML-DSA-65 signing success: 747/747
+- ML-DSA-65 original verification: 747/747 PASS
+- ML-DSA-65 label tampering detection: 747/747
+- ML-DSA-65 quality-score tampering detection: 747/747
+- ML-DSA-65 identifier tampering detection: 747/747
+- Technical errors: 0
+
+The first run's raw CSV and console file were not retained because of the overwrite. The currently retained files correspond to the second execution.
+
+This functional tampering validation does not contribute latency or performance measurements. No observations were excluded or altered, and no further metadata validation reruns will be performed.

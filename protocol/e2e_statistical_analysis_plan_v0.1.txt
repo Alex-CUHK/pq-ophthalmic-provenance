@@ -1,0 +1,44 @@
+End-to-End Statistical Analysis Plan
+Version: 0.1
+
+This analysis plan was defined after formal end-to-end quality control but before inspection of formal end-to-end latency results.
+
+Primary analysis unit:
+Experimental block.
+
+For each of the 30 blocks and each cryptographic algorithm, the following record-level quantities will be summarized using their within-block median:
+1. Image hashing latency
+2. Canonical provenance construction latency
+3. Signing latency within the end-to-end pipeline
+4. Total end-to-end provenance generation latency
+
+Primary endpoint:
+Total end-to-end provenance generation latency.
+
+For each algorithm, the 30 block-level median end-to-end latencies will be summarized using:
+- Median
+- Interquartile range
+- 95% bootstrap confidence interval for the median
+
+Paired comparison:
+For each block, the ratio of the ML-DSA-65 block-level median end-to-end latency to the ECDSA P-256 block-level median end-to-end latency will be calculated.
+
+The 30 paired ratios will be summarized using:
+- Median
+- Interquartile range
+- 95% bootstrap confidence interval
+
+Component latencies:
+Hashing, canonical provenance construction, and signing latency will be reported descriptively using the same block-level median framework.
+
+Bootstrap:
+- 10,000 block-level bootstrap resamples
+- Fixed random seed: 20260815
+- Paired block structure will be preserved for comparative ratios
+
+Order sensitivity:
+End-to-end block-level median latency will be stratified by algorithm execution position (first versus second).
+
+Record-level operations will not be treated as independent experimental replicates.
+
+No formal observations will be excluded unless a technical exclusion is documented.

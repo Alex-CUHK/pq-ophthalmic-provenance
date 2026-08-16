@@ -1,0 +1,38 @@
+Benchmark Method Addendum
+Version: 0.1
+
+This addendum was defined before the formal 30-block performance benchmark.
+
+Formal cryptographic performance measurements:
+
+1. All 747 canonical provenance records will be loaded into memory before timing begins.
+
+2. File input/output time will not be included in cryptographic signing or verification latency.
+
+3. Key generation will be measured separately from signing and verification.
+
+4. Signing latency is defined as the elapsed time from initialization of the OpenSSL EVP signing operation through completion of one-shot signature generation. File I/O and caller-managed buffer allocation are excluded. Any internal allocation performed by OpenSSL as part of the measured EVP operation is included.
+
+5. Verification latency is defined as the elapsed time from initialization of the OpenSSL EVP verification operation through completion of signature verification. File I/O and caller-managed buffer allocation are excluded. Any internal allocation performed by OpenSSL as part of the measured EVP operation is included.
+
+6. ECDSA P-256 will use SHA-256.
+
+7. ML-DSA-65 will use Pure ML-DSA without external pre-hashing.
+
+8. Three non-analyzed warm-up passes will be performed before the formal benchmark.
+
+9. Thirty formal experimental blocks will be performed.
+
+10. Each block will contain all 747 provenance records for both algorithms.
+
+11. Algorithm execution order will be balanced across blocks: ECDSA P-256 will be evaluated first in 15 blocks and ML-DSA-65 first in 15 blocks. The 30-block order will be shuffled using the fixed randomization seed 20260815.
+
+12. A fresh key pair will be generated for each algorithm in each formal block.
+
+13. Raw record-level timings and signature sizes will be retained.
+
+14. Any failed verification or benchmark error will be recorded rather than silently discarded.
+
+15. Timing will use a monotonic high-resolution system clock.
+
+16. The fixed randomization seed for the formal benchmark is 20260815.

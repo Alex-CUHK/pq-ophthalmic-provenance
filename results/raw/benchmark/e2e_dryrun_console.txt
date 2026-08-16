@@ -1,0 +1,21 @@
+OpenSSL: OpenSSL 3.6.1 27 Jan 2026
+Records loaded: 5
+Blocks: 2
+Warmups: 1
+Seed: 20260815
+Run name: e2e_dryrun
+
+Checking canonical provenance reproduction...
+Canonicalization preflight: PASS (5/5)
+
+Starting warm-up...
+Warm-up 1/1: ECDSA_P256_SHA256 then ML_DSA_65
+Warm-up complete.
+
+Block 1/2: ECDSA_P256_SHA256 then ML_DSA_65
+Block 2/2: ML_DSA_65 then ECDSA_P256_SHA256
+
+End-to-end benchmark completed successfully.
+Timings: /Users/dongfang/pq_ophthalmology/results/raw/benchmark/e2e_dryrun_e2e_timings.csv
+Key generation: /Users/dongfang/pq_ophthalmology/results/raw/benchmark/e2e_dryrun_e2e_keygen.csv
+Schedule: /Users/dongfang/pq_ophthalmology/results/raw/benchmark/e2e_dryrun_e2e_schedule.csv

@@ -1,0 +1,52 @@
+========== FORMAL V1 PERFORMANCE RESULTS ==========
+
+Algorithm: ECDSA_P256_SHA256
+  Signing latency (block medians): 17.250 us [IQR 17.208–17.375], 95% CI 17.250–17.292
+  Verification latency (block medians): 49.084 us [IQR 49.042–51.021], 95% CI 49.062–49.188
+  Signing throughput: 56143.8 ops/s [IQR 53958.6–57698.8], 95% CI 55465.5–57410.0
+  Verification throughput: 19728.8 ops/s [IQR 18979.3–20292.6], 95% CI 19562.3–20148.0
+
+Algorithm: ML_DSA_65
+  Signing latency (block medians): 447.146 us [IQR 446.760–449.656], 95% CI 446.792–448.542
+  Verification latency (block medians): 103.125 us [IQR 102.927–108.021], 95% CI 102.958–103.291
+  Signing throughput: 1790.1 ops/s [IQR 1712.1–1839.1], 95% CI 1745.7–1821.1
+  Verification throughput: 9449.6 ops/s [IQR 9049.6–9663.8], 95% CI 9188.3–9638.0
+
+========== PAIRED BLOCK RATIOS ==========
+ML-DSA-65 / ECDSA signing latency ratio: 25.943x [IQR 25.825–26.071], 95% CI 25.884–26.027
+ML-DSA-65 / ECDSA verification latency ratio: 2.099x [IQR 2.093–2.103], 95% CI 2.096–2.101
+
+========== SIGNATURE SIZE ==========
+ECDSA_P256_SHA256: mean 70.994 bytes; median 71.0; IQR 70.0–71.0; range 68–72
+ML_DSA_65: mean 3309.000 bytes; median 3309.0; IQR 3309.0–3309.0; range 3309–3309
+ML-DSA-65 / ECDSA mean signature-size ratio: 46.610x
+
+========== SIGNATURE-ONLY STORAGE PROJECTIONS ==========
+1,000 records:
+  ECDSA: 0.068 MiB
+  ML-DSA-65: 3.156 MiB
+  Additional: 3.088 MiB
+100,000 records:
+  ECDSA: 6.770 MiB
+  ML-DSA-65: 315.571 MiB
+  Additional: 308.800 MiB
+1,000,000 records:
+  ECDSA: 67.705 MiB
+  ML-DSA-65: 3155.708 MiB
+  Additional: 3088.004 MiB
+
+========== KEY GENERATION ==========
+ECDSA_P256_SHA256: 36.729 us [IQR 29.312–43.281], 95% CI 33.396–41.979
+ML_DSA_65: 121.771 us [IQR 116.052–129.312], 95% CI 116.542–127.499
+
+========== ORDER SENSITIVITY ==========
+ECDSA_P256_SHA256, position 1: n=15, sign median=17.250 us, verify median=49.083 us
+ECDSA_P256_SHA256, position 2: n=15, sign median=17.250 us, verify median=49.125 us
+ML_DSA_65, position 1: n=15, sign median=447.041 us, verify median=103.167 us
+ML_DSA_65, position 2: n=15, sign median=447.250 us, verify median=103.000 us
+
+NOTE: Record-level operations are not treated as independent experimental replicates.
+
+Saved:
+/Users/dongfang/pq_ophthalmology/results/processed/formal_v1/formal_v1_block_summary.csv
+/Users/dongfang/pq_ophthalmology/results/processed/formal_v1/formal_v1_summary.txt

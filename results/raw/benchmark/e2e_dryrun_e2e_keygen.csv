@@ -1,0 +1,5 @@
+run,block,algorithm,order_position,keygen_ns,keygen_ok
+e2e_dryrun,1,ECDSA_P256_SHA256,1,27167,1
+e2e_dryrun,1,ML_DSA_65,2,197250,1
+e2e_dryrun,2,ML_DSA_65,1,176417,1
+e2e_dryrun,2,ECDSA_P256_SHA256,2,22292,1

@@ -1,0 +1,15 @@
+========== SMOKE TEST ==========
+
+Message:
+/Users/dongfang/pq_ophthalmology/data/derived/provenance/0_0.provenance.json
+
+Message SHA-256:
+a4fb4aafb5f46b4f08d0b3caee30de5b3ed8da8a45af81564e3dcbf61cb1fc93  /Users/dongfang/pq_ophthalmology/data/derived/provenance/0_0.provenance.json
+
+OpenSSL:
+OpenSSL 3.6.1 27 Jan 2026 (Library: OpenSSL 3.6.1 27 Jan 2026)
+
+Signature sizes:
+      72 /Users/dongfang/pq_ophthalmology/signatures/smoke_test/ecdsa_p256_0_0.sig
+    3309 /Users/dongfang/pq_ophthalmology/signatures/smoke_test/mldsa65_0_0.sig
+    3381 total

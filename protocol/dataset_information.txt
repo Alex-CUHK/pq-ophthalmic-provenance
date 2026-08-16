@@ -1,0 +1,6 @@
+Dataset: Hillel Yaffe Glaucoma Dataset (HYGD)
+Version: 1.1.0
+Local dataset directory: data/raw/HYGD_v1.1.0
+Original source: PhysioNet
+Purpose: Ophthalmic data provenance and post-quantum digital signature evaluation
+Raw data policy: Files in data/raw are preserved without modification.

@@ -1,0 +1,13 @@
+========== DATASET AUDIT ==========
+Image files:              747
+Label rows:               747
+Unique image names:       747
+Unique label image names: 747
+Unique patients:          288
+Missing labels:           0
+Missing images:           0
+Duplicate label rows:     0
+
+Label distribution:
+  GON+: 548
+  GON-: 199

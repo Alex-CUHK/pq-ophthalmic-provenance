@@ -1,0 +1,51 @@
+OpenSSL: OpenSSL 3.6.1 27 Jan 2026
+Records loaded: 747
+Blocks: 30
+Warmups: 3
+Seed: 20260815
+Run name: e2e_formal_v1
+
+Checking canonical provenance reproduction...
+Canonicalization preflight: PASS (747/747)
+
+Starting warm-up...
+Warm-up 1/3: ECDSA_P256_SHA256 then ML_DSA_65
+Warm-up 2/3: ML_DSA_65 then ECDSA_P256_SHA256
+Warm-up 3/3: ECDSA_P256_SHA256 then ML_DSA_65
+Warm-up complete.
+
+Block 1/30: ECDSA_P256_SHA256 then ML_DSA_65
+Block 2/30: ECDSA_P256_SHA256 then ML_DSA_65
+Block 3/30: ML_DSA_65 then ECDSA_P256_SHA256
+Block 4/30: ECDSA_P256_SHA256 then ML_DSA_65
+Block 5/30: ECDSA_P256_SHA256 then ML_DSA_65
+Block 6/30: ML_DSA_65 then ECDSA_P256_SHA256
+Block 7/30: ML_DSA_65 then ECDSA_P256_SHA256
+Block 8/30: ECDSA_P256_SHA256 then ML_DSA_65
+Block 9/30: ECDSA_P256_SHA256 then ML_DSA_65
+Block 10/30: ECDSA_P256_SHA256 then ML_DSA_65
+Block 11/30: ML_DSA_65 then ECDSA_P256_SHA256
+Block 12/30: ECDSA_P256_SHA256 then ML_DSA_65
+Block 13/30: ML_DSA_65 then ECDSA_P256_SHA256
+Block 14/30: ECDSA_P256_SHA256 then ML_DSA_65
+Block 15/30: ECDSA_P256_SHA256 then ML_DSA_65
+Block 16/30: ECDSA_P256_SHA256 then ML_DSA_65
+Block 17/30: ECDSA_P256_SHA256 then ML_DSA_65
+Block 18/30: ML_DSA_65 then ECDSA_P256_SHA256
+Block 19/30: ML_DSA_65 then ECDSA_P256_SHA256
+Block 20/30: ML_DSA_65 then ECDSA_P256_SHA256
+Block 21/30: ML_DSA_65 then ECDSA_P256_SHA256
+Block 22/30: ML_DSA_65 then ECDSA_P256_SHA256
+Block 23/30: ML_DSA_65 then ECDSA_P256_SHA256
+Block 24/30: ECDSA_P256_SHA256 then ML_DSA_65
+Block 25/30: ECDSA_P256_SHA256 then ML_DSA_65
+Block 26/30: ML_DSA_65 then ECDSA_P256_SHA256
+Block 27/30: ML_DSA_65 then ECDSA_P256_SHA256
+Block 28/30: ML_DSA_65 then ECDSA_P256_SHA256
+Block 29/30: ML_DSA_65 then ECDSA_P256_SHA256
+Block 30/30: ECDSA_P256_SHA256 then ML_DSA_65
+
+End-to-end benchmark completed successfully.
+Timings: /Users/dongfang/pq_ophthalmology/results/raw/benchmark/e2e_formal_v1_e2e_timings.csv
+Key generation: /Users/dongfang/pq_ophthalmology/results/raw/benchmark/e2e_formal_v1_e2e_keygen.csv
+Schedule: /Users/dongfang/pq_ophthalmology/results/raw/benchmark/e2e_formal_v1_e2e_schedule.csv

@@ -1,0 +1,25 @@
+OpenSSL: OpenSSL 3.6.1 27 Jan 2026
+Cases loaded: 747
+
+Testing ECDSA_P256_SHA256...
+  Signing success:       747 / 747
+  Original verification: 747 / 747 PASS
+  Label tampering:       747 / 747 DETECTED
+  Quality tampering:     747 / 747 DETECTED
+  Identifier tampering:  747 / 747 DETECTED
+  Technical errors:      0
+
+Testing ML_DSA_65...
+  Signing success:       747 / 747
+  Original verification: 747 / 747 PASS
+  Label tampering:       747 / 747 DETECTED
+  Quality tampering:     747 / 747 DETECTED
+  Identifier tampering:  747 / 747 DETECTED
+  Technical errors:      0
+
+===============================
+FINAL METADATA VALIDATION: PASS
+===============================
+
+Raw results:
+/Users/dongfang/pq_ophthalmology/results/raw/tampering/formal_v1/formal_metadata_tampering.csv

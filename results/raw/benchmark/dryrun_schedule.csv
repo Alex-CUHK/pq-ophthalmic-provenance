@@ -1,0 +1,3 @@
+block,first_algorithm,second_algorithm
+1,ECDSA_P256_SHA256,ML_DSA_65
+2,ML_DSA_65,ECDSA_P256_SHA256

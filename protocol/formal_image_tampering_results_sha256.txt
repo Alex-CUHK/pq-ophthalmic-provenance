@@ -1,0 +1,2 @@
+9ef42432fd4ccfe3b1ead91397a5ade384ea48128c39ed7f5c988368848948b5  results/raw/tampering/formal_v1/formal_image_tampering.csv
+2821f7377e7d5ad3afc7bf85cd30dd4df856f81208c16ab43b6072a04ff43a02  results/raw/tampering/formal_v1/formal_image_console.txt

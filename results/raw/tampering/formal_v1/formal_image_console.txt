@@ -1,0 +1,13 @@
+========== IMAGE HASH-BINDING VALIDATION ==========
+Records: 747
+Original image bound to signed hash: 747 / 747
+Tampered image hash mismatch detected: 747 / 747
+Generation manifest hash consistency: 747 / 747
+Technical errors: 0
+
+===============================
+FINAL IMAGE VALIDATION: PASS
+===============================
+
+Raw results:
+/Users/dongfang/pq_ophthalmology/results/raw/tampering/formal_v1/formal_image_tampering.csv

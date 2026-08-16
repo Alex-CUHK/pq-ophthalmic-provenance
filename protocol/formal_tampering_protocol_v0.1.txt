@@ -1,0 +1,55 @@
+Formal Tampering Validation Protocol
+Version: 0.1
+
+This protocol defines the exact tampering transformations before formal tampering results are inspected.
+
+Dataset:
+747 canonical HYGD provenance records and their corresponding fundus image files.
+
+General rules:
+1. Original raw images and original provenance records will never be modified.
+2. All tampered files will be created under data/derived/tampering/formal_v1.
+3. Tampering validation is functional and will not be included in performance latency analysis.
+
+Scenario 1: Image-content tampering
+- A derived copy of each image will be created.
+- Exactly one byte at floor(file_size / 2) will be modified using XOR 0x01.
+- The original signed provenance record will remain unchanged.
+- Detection criterion: SHA-256 of the tampered image differs from image_sha256 stored in the signed provenance record.
+- Signature verification of the unchanged provenance is expected to remain valid and is not the image-tampering detection mechanism.
+
+Scenario 2: Diagnostic-label tampering
+- GON+ will be changed to GON-.
+- GON- will be changed to GON+.
+- The original digital signature will be tested against the altered canonical provenance.
+- Detection criterion: signature verification failure.
+
+Scenario 3: Quality-score tampering
+- Exactly 0.01 will be added to the existing quality score using decimal arithmetic.
+- Original decimal precision will be preserved.
+- The original digital signature will be tested against the altered canonical provenance.
+- Detection criterion: signature verification failure.
+
+Scenario 4: Image-identifier tampering
+- image_name will be changed from the original value to "tampered_" + original image_name.
+- The original digital signature will be tested against the altered canonical provenance.
+- Detection criterion: signature verification failure.
+
+Signature schemes for metadata tampering:
+1. ECDSA P-256 with SHA-256
+2. Pure ML-DSA-65
+
+Functional signing model:
+- One signing key pair per algorithm will represent a single signing authority.
+- Each original provenance record will be signed.
+- Original records must successfully verify before tampered versions are evaluated.
+
+Formal success criteria:
+- Original provenance verification: 747/747 PASS for each algorithm.
+- Image tampering: 747/747 SHA-256 binding mismatches detected.
+- Label tampering: 747/747 verification failures for each algorithm.
+- Quality-score tampering: 747/747 verification failures for each algorithm.
+- Identifier tampering: 747/747 verification failures for each algorithm.
+- No technical signing or verification errors.
+
+All raw validation results will be retained.

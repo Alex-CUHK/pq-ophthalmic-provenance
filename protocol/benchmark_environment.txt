@@ -1,0 +1,56 @@
+========== BENCHMARK ENVIRONMENT ==========
+2026-08-15T14:44:40+0800
+
+Architecture:
+arm64
+
+macOS:
+ProductName:		macOS
+ProductVersion:		13.2.1
+BuildVersion:		22D68
+
+CPU:
+Apple M2
+
+Logical CPUs:
+8
+
+Physical CPUs:
+8
+
+Memory bytes:
+8589934592
+
+OpenSSL:
+OpenSSL 3.6.1 27 Jan 2026 (Library: OpenSSL 3.6.1 27 Jan 2026)
+built on: Tue Jan 27 13:33:54 2026 UTC
+platform: darwin64-arm64-cc
+options:  bn(64,64)
+compiler: clang -fPIC -arch arm64 -O3 -Wall -DL_ENDIAN -DOPENSSL_PIC -D_REENTRANT -DOPENSSL_BUILDING_OPENSSL -DNDEBUG
+OPENSSLDIR: "/opt/homebrew/etc/openssl@3"
+ENGINESDIR: "/opt/homebrew/Cellar/openssl@3/3.6.1/lib/engines-3"
+MODULESDIR: "/opt/homebrew/Cellar/openssl@3/3.6.1/lib/ossl-modules"
+Seeding source: os-specific
+CPUINFO: OPENSSL_armcap=0x987d
+
+Clang:
+Apple clang version 14.0.3 (clang-1403.0.22.14.1)
+Target: arm64-apple-darwin22.3.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+Power configuration:
+System-wide power settings:
+Currently in use:
+ standby              0
+ Sleep On Power Button 1
+ autorestart          0
+ powernap             1
+ networkoversleep     0
+ disksleep            10
+ sleep                1 (sleep prevented by powerd, useractivityd, sharingd)
+ ttyskeepawake        1
+ displaysleep         0
+ tcpkeepalive         1
+ lowpowermode         0
+ womp                 1

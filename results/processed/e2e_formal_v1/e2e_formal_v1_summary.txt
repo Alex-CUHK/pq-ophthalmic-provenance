@@ -1,0 +1,24 @@
+========== FORMAL END-TO-END RESULTS ==========
+
+Algorithm: ECDSA_P256_SHA256
+  Image hashing latency: 47.500 us [IQR 47.386–47.667], 95% CI 47.438–47.646
+  Provenance construction latency: 0.208 us [IQR 0.208–0.208], 95% CI 0.208–0.208
+  Signing latency within pipeline: 17.417 us [IQR 17.375–17.458], 95% CI 17.375–17.417
+  Total end-to-end latency: 65.230 us [IQR 65.166–65.479], 95% CI 65.166–65.375
+
+Algorithm: ML_DSA_65
+  Image hashing latency: 48.000 us [IQR 47.886–48.167], 95% CI 47.917–48.125
+  Provenance construction latency: 0.208 us [IQR 0.208–0.208], 95% CI 0.208–0.208
+  Signing latency within pipeline: 445.688 us [IQR 445.333–446.583], 95% CI 445.416–446.000
+  Total end-to-end latency: 494.292 us [IQR 493.406–496.104], 95% CI 493.688–495.459
+
+========== PAIRED E2E RATIO ==========
+ML-DSA-65 / ECDSA total end-to-end latency ratio: 7.565x [IQR 7.547–7.617], 95% CI 7.553–7.599
+
+========== ORDER SENSITIVITY ==========
+ECDSA_P256_SHA256, position 1: n=15, E2E median=65.167 us
+ECDSA_P256_SHA256, position 2: n=15, E2E median=65.375 us
+ML_DSA_65, position 1: n=15, E2E median=494.833 us
+ML_DSA_65, position 2: n=15, E2E median=493.875 us
+
+NOTE: Record-level operations are not treated as independent experimental replicates.

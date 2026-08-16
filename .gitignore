@@ -1,0 +1,25 @@
+# Private cryptographic keys
+keys/
+
+# Generated signatures
+signatures/
+
+# Original HYGD dataset
+data/raw/
+
+# Generated tampered image copies
+data/derived/tampering/formal_v1/image/
+
+# Compiled binaries
+bin/
+
+# macOS
+.DS_Store
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Temporary files
+*.tmp
+*.swp

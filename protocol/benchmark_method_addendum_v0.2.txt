@@ -1,0 +1,43 @@
+Benchmark Method Addendum
+Version: 0.2
+
+This protocol was finalized before the formal performance benchmark.
+Version 0.2 supersedes version 0.1 while preserving version 0.1 for auditability.
+
+1. All 747 canonical provenance records will be loaded into memory before timing begins.
+
+2. File input/output time will not be included in cryptographic signing or verification latency.
+
+3. Key generation will be measured separately from signing and verification.
+
+4. Signing latency is defined as the elapsed time from initialization of the OpenSSL EVP signing operation through completion of one-shot signature generation. File I/O and caller-managed buffer allocation are excluded. Internal work performed by OpenSSL during the measured EVP operation is included.
+
+5. Verification latency is defined as the elapsed time from initialization of the OpenSSL EVP verification operation through completion of signature verification. File I/O and caller-managed buffer allocation are excluded. Internal work performed by OpenSSL during the measured EVP operation is included.
+
+6. ECDSA P-256 will use SHA-256.
+
+7. ML-DSA-65 will use Pure ML-DSA without external pre-hashing.
+
+8. Three non-analyzed warm-up passes will be performed before the formal benchmark.
+
+9. Thirty formal experimental blocks will be performed.
+
+10. Each formal block will contain all 747 provenance records for both algorithms.
+
+11. Algorithm execution order will be balanced across blocks: ECDSA P-256 will be evaluated first in 15 blocks and ML-DSA-65 first in 15 blocks.
+
+12. The 30-block order will be shuffled using the fixed randomization seed 20260815.
+
+13. A fresh key pair will be generated for each algorithm in each formal block.
+
+14. Raw record-level signing times, verification times, signature sizes, and success/failure status will be retained.
+
+15. Any failed verification or benchmark error will be recorded rather than silently discarded.
+
+16. Timing will use a monotonic high-resolution system clock.
+
+17. Within each block, both algorithms will process records in the same manifest order, allowing paired record-level comparisons.
+
+18. The formal benchmark will be conducted while the computer is connected to AC power with macOS Low Power Mode disabled.
+
+19. Dry-run measurements performed for software validation will not be included in the formal statistical analysis.

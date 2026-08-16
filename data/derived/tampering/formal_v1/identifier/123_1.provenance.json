@@ -1,0 +1,1 @@
+{"dataset":"HYGD","dataset_version":"1.1.0","hash_algorithm":"SHA-256","image_name":"tampered_123_1.jpg","image_sha256":"e1b67af1d98d895a78a1d5c8fc3c654a9c54264da97b1dba53e7454da0833b10","label":"GON+","patient_id":"123","provenance_schema":"oph-pq-provenance-v1","quality_score":"6.43"}
